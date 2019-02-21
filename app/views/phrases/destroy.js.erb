@@ -1,0 +1,5 @@
+$('.phraseDelete').bind('ajax:success', function () {
+    let target = $(this).data('target');
+    $('#' + target)[0].remove();
+    $(this).remove();
+});

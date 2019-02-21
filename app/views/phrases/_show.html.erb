@@ -1,0 +1,32 @@
+<div class="tab-pane fade <%= @phrase == show.id.to_s ? "active show" : "" %>" id="v-pills-<%= show.id %>" role="tabpanel" aria-labelledby="v-pills-<%= show.id %>-tab">
+  <div class="card" style="width: 80%; margin-left: 10%">
+    <% if show.demonstration.attached? %>
+      <%= image_tag(show.demonstration, class: 'card-img-top') %>
+    <% end %>
+    <div class="card-body">
+      <h3 class="card-title"><%= show.word.content %></h3>
+      <h6 class="card-subtitle mb-2 text-muted"><%= show.day %></h6>
+      <p class="card-text"><%= show.word.definition %></p>
+      <table class="table">
+        <thead>
+        <tr>
+          <th></th>
+          <th>Phrase</th>
+          <th>Definition</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% show.translations.each do |translation| %>
+          <tr>
+            <td><%= translation.language %></td>
+            <td><%= translation.content %></td>
+            <td><%= translation.definition %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <%= link_to 'Edit', edit_phrase_path(show, category_id: show.category), class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
+<br/>

@@ -1,0 +1,4 @@
+<a class="nav-link <%= @category == category.id.to_s ? "active" : "" %>" id="v-pills-c<%= category.id %>-tab" data-toggle="pill" href="#v-pills-c<%= category.id %>" role="tab" aria-controls="v-pills-c<%= category.id %>" aria-selected="false">
+  <%= category.name %>
+</a>
+<%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?', remote: true, target: 'v-pills-c' + category.id.to_s + '-tab', children: 'v-pills-c' + category.id.to_s }, class: 'categoryDelete', hidden: true %>

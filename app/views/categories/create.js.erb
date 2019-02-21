@@ -1,0 +1,4 @@
+$('#new-category form').remove();
+$('#new-category a').show();
+$('div#v-pills-tab').append('<%= j render @category %>')
+$('div#v-pills-tabContent').append('<%= j render partial:'application/categoryPhrases', object: @category %>')

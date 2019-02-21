@@ -1,0 +1,4 @@
+<a class="nav-link <%= @phrase == phrase.id.to_s ? "active" : "" %>" id="v-pills-<%= phrase.id %>-tab" data-toggle="pill" href="#v-pills-<%= phrase.id %>" role="tab" aria-controls="v-pills-<%= phrase.id %>" aria-selected="false">
+  <%= phrase.word.content %>
+</a>
+<%= link_to 'Destroy', phrase, method: :delete, data: { remote: true, target: 'v-pills-' + phrase.id.to_s + '-tab' }, class: 'phraseDelete', hidden: true %>
